@@ -21,5 +21,6 @@ declare let process: {
     YTS_USERNAME: string;
     YTS_PASSWORD: string;
     OMDB_API_KEY: string;
+    MONGO_CONECTION_STRING: string;
   };
 };

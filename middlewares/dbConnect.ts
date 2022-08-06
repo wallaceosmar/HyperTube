@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb+srv://test:test@cluster0.8nlmr.mongodb.net/test", {
+mongoose.connect(process.env.MONGO_CONECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
