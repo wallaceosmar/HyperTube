@@ -7,7 +7,7 @@ import { User } from "@/types/user";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Methods } from "@/types/requests";
-import useUser, { usePatchUser, usersRoute } from "@/hooks/api/useUser";
+import useUser, { usePatchMe, usersRoute } from "@/hooks/api/useUser";
 import styles from "./picture.module.scss";
 import { ReactComponent as CrossIcon } from "../../public/icons/cross.svg";
 import { ReactComponent as CheckIcon } from "../../public/icons/check.svg";
@@ -43,7 +43,7 @@ export async function getServerSideProps() {
 
 function PictureContent({ initialData }: { initialData: User }) {
   const { data: user, isValidating } = useUser(initialData.id, { initialData });
-  const patcher = usePatchUser(initialData.id);
+  const patcher = usePatchMe();
 
   const [currentId, setCurrentId] = React.useState(initialData.picture);
   const router = useRouter();
